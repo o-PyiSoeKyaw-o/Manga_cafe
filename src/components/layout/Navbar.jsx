@@ -141,10 +141,10 @@ export default function Navbar() {
         {isAuthenticated ? (
           <>
             {/* Coin balance */}
-            <Link to="/dashboard" className="coin-badge hidden sm:flex">
+            {/* <Link to="/dashboard" className="coin-badge hidden sm:flex">
               <Coins size={12} />
               <span><WalletBalance /></span>
-            </Link>
+            </Link> */}
 
             {/* Notifications */}
             <button className="btn-ghost p-2 relative">
