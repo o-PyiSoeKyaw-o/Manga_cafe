@@ -69,8 +69,8 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 h-16 bg-[var(--color-bg)] border-b border-[var(--color-border)] flex items-center px-4 gap-3">
-        {/* Sidebar toggle */}
-        <button onClick={() => setSidebarOpen(!sidebarOpen)} className="btn-ghost p-2">
+        {/* Sidebar toggle (mobile only) */}
+        <button onClick={() => setSidebarOpen(!sidebarOpen)} className="btn-ghost p-2 lg:hidden">
           <Menu size={20} />
         </button>
 

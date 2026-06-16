@@ -176,7 +176,7 @@ function CategorySection() {
 
   return (
     <section className="mb-10 px-4 lg:px-6">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-wrap items-center justify-between mb-4">
         <h2 className="section-title mb-0">{t('home.by_category')}</h2>
         <Link to="/webtoons" className="flex items-center gap-1 text-sm text-primary-400 hover:text-primary-300">
           {t('home.view_all')} <ChevronRight size={14} />
@@ -184,14 +184,14 @@ function CategorySection() {
       </div>
 
       {/* Genre pills */}
-      <div className="flex gap-2 mb-5 overflow-x-auto pb-1">
+      <div className="flex flex-wrap gap-2 mb-5 overflow-x-auto pb-1">
         <button onClick={() => setActiveGenre(null)} className={`genre-pill shrink-0 ${!activeGenre ? 'active' : ''}`}>All</button>
         {genres?.map((g) => (
           <button key={g.id} onClick={() => setActiveGenre(g.slug)} className={`genre-pill shrink-0 ${activeGenre === g.slug ? 'active' : ''}`}>{g.name}</button>
         ))}
       </div>
 
-      <div className="flex gap-4 overflow-x-auto pb-2">
+      <div className="flex flex-wrap gap-4 overflow-x-auto pb-2">
         {isLoading ? <CardSkeleton count={6} /> :
           series?.map((s) => (
             <div key={s.id} className="scroll-snap-item shrink-0">
