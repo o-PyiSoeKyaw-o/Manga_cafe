@@ -39,11 +39,14 @@ export default function Navbar() {
   const [userMenuOpen, setUserMenuOpen] = useState(false)
   const [langMenuOpen, setLangMenuOpen] = useState(false)
   const userMenuRef = useRef()
+  const langMenuRef = useRef()
 
   useEffect(() => {
     const handler = (e) => {
       if (userMenuRef.current && !userMenuRef.current.contains(e.target)) {
         setUserMenuOpen(false)
+      }
+      if (langMenuRef.current && !langMenuRef.current.contains(e.target)) {
         setLangMenuOpen(false)
       }
     }
@@ -119,7 +122,7 @@ export default function Navbar() {
         </button>
 
         {/* Language */}
-        <div className="relative" ref={userMenuRef}>
+        <div className="relative" ref={langMenuRef}>
           <button onClick={() => setLangMenuOpen(!langMenuOpen)} className="btn-ghost p-2">
             <Globe size={20} />
           </button>
@@ -152,7 +155,7 @@ export default function Navbar() {
             </button>
 
             {/* User menu */}
-            <div className="relative">
+            <div className="relative" ref={userMenuRef}>
               <button onClick={() => setUserMenuOpen(!userMenuOpen)} className="flex items-center gap-2">
                 {user?.avatar
                   ? <img src={user.avatar} className="w-8 h-8 rounded-full object-cover" alt={user.username} />
