@@ -25,7 +25,7 @@ export default function Sidebar() {
 
   return (
     <aside className={clsx(
-      'fixed left-0 top-16 bottom-0 z-40 bg-[var(--color-bg)] border-r border-[var(--color-border)] transition-all duration-300 flex flex-col',
+      'hidden fixed left-0 top-16 bottom-0 z-40 bg-[var(--color-bg)] border-r border-[var(--color-border)] transition-all duration-300 lg:flex flex-col',
       sidebarOpen ? 'w-64' : 'w-16'
     )}>
       <nav className="flex-1 py-4 overflow-y-auto">

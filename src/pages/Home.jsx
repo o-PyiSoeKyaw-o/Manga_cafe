@@ -16,7 +16,7 @@ const TODAY = DAYS[new Date().getDay() === 0 ? 6 : new Date().getDay() - 1]
 function HorizontalScroll({ children, title, viewAllTo }) {
   return (
     <section className="mb-10">
-      <div className="flex items-center justify-between mb-4 px-4 lg:px-6">
+      <div className="flex-wrap flex items-center justify-between mb-4 px-4 lg:px-6">
         <h2 className="section-title mb-0">{title}</h2>
         {viewAllTo && (
           <Link to={viewAllTo} className="flex items-center gap-1 text-sm text-primary-400 hover:text-primary-300 transition-colors">
@@ -87,7 +87,7 @@ function DailySchedule() {
       </div>
 
       {/* Day tabs */}
-      <div className="flex gap-2 mb-5 overflow-x-auto pb-1">
+      <div className="flex flex-wrap gap-2 mb-5 overflow-x-auto pb-1">
         {DAYS.map((day) => (
           <button key={day} onClick={() => setActiveDay(day)}
             className={`shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold transition-all ${

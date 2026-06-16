@@ -185,7 +185,7 @@ export default function Navbar() {
         ) : (
           <div className="flex items-center gap-2">
             <Link to="/login" className="btn-ghost text-sm px-3 py-1.5">{t('nav.login')}</Link>
-            <Link to="/register" className="btn-primary text-sm px-3 py-1.5">{t('nav.signup')}</Link>
+            {/* <Link to="/register" className="btn-primary text-sm px-3 py-1.5">{t('nav.signup')}</Link> */}
           </div>
         )}
       </nav>
